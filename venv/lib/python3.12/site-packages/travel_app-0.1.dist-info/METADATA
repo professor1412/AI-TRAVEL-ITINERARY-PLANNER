@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: travel_app
+Version: 0.1
+Requires-Dist: fastapi
+Requires-Dist: sqlalchemy
+Requires-Dist: alembic
+Requires-Dist: python-dotenv
+Dynamic: requires-dist
