@@ -61,3 +61,64 @@ pip install -r requirements.txt
 # Set up environment variables
 cp .env.example .env
 # Edit .env and add your Hugging Face API key
+
+```
+
+### 🌐 Frontend Setup
+```bash
+cd ../frontend
+
+# Install frontend dependencies
+npm install
+
+# Create .env file
+cp .env.example .env
+# Then edit .env to include:
+# REACT_APP_API_URL=http://localhost:8000
+```
+
+### Configuration
+- Create .env files in both backend and frontend directories:
+
+### Backend (.env)
+```bash
+DATABASE_URL=sqlite:///./backend.db
+HF_API_KEY=your_hugging_face_api_key
+```
+
+### Frontend (.env)
+```bash
+REACT_APP_API_URL=http://localhost:8000
+```
+
+### Project Structure
+```bash
+ai-travel-itinerary-planner/
+├── backend/
+│   ├── app/                  # FastAPI application
+│   │   ├── main.py           # FastAPI entry point
+│   │   ├── database.py       # Database configuration
+│   │   ├── models.py         # Database models
+│   │   ├── schemas.py        # Pydantic models
+│   │   ├── crud.py           # Database operations
+│   │   └── llm.py            # AI integration
+│   ├── alembic/              # Database migrations
+│   ├── requirements.txt      # Python dependencies
+│   └── .env                  # Environment variables
+├── frontend/
+│   ├── src/
+│   │   ├── components/       # React components
+│   │   │   ├── ItineraryForm.jsx
+│   │   │   ├── ItineraryList.jsx
+│   │   │   └── ItineraryDetail.jsx
+│   │   ├── services/         # API services
+│   │   │   └── api.js
+│   │   ├── App.js            # Main application component
+│   │   ├── App.css           # Global styles
+│   │   └── index.js          # Entry point
+│   ├── public/               # Static assets
+│   ├── package.json          # Frontend dependencies
+│   └── .env                  # Frontend environment variables
+├── .gitignore
+└── README.md
+```
